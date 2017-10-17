@@ -1,7 +1,7 @@
 module SpecHelper
 ( module Test.Hspec
---, module Phoityne.Example.Math
+, module ShowParser
 ) where
 
 import Test.Hspec
---import Phoityne.Example.Math
+import ShowParser ( parseShow )

@@ -3,4 +3,4 @@ module ShowParser
     ) where
 
 someFunc :: IO ()
-someFunc = putStrLn "someFunc"
+someFunc = putStrLn "someFunc 2"
