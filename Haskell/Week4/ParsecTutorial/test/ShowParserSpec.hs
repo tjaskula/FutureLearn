@@ -36,11 +36,11 @@ spec =
   describe "Parsec" $ do
     context "show PersonRecord Wim" $
       it "should equal to string representation" $
-        show rec1 `shouldBe` "MkPersonRecord {name = \"Wim Vanderbauwhede\", address = MkAddress {line1 = \"School of Computing Science\", number = 17, street = \"Lilybank Gdns\", town = \"Glasgow\", postcode = \"G12 8QQ\"}, id = 557188, labels = [Green,Red]}"
+        parseShow (show rec1) `shouldBe` "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<record name=\"MkPersonRecord\"><elt key=\"name\">\"Wim Vanderbauwhede\"</elt>\n<elt key=\"address\"><record name=\"MkAddress\"><elt key=\"line1\">\"School of Computing Science\"</elt>\n<elt key=\"number\">17</elt>\n<elt key=\"street\">\"Lilybank Gdns\"</elt>\n<elt key=\"town\">\"Glasgow\"</elt>\n<elt key=\"postcode\">\"G12 8QQ\"</elt></record></elt>\n<elt key=\"id\">557188</elt>\n<elt key=\"labels\"><list><list-elt><adt>Green</adt></list-elt>\n<list-elt><adt>Red</adt></list-elt></list></elt></record>"
 
     context "show PersonRecord Jeremy" $
       it "should equal to string representation" $
-        show rec2 `shouldBe` "MkPersonRecord {name = \"Jeremy Singer\", address = MkAddress {line1 = \"School of Computing Science\", number = 17, street = \"Lilybank Gdns\", town = \"Glasgow\", postcode = \"G12 8QQ\"}, id = 42, labels = [Blue,Yellow]}"
+        parseShow (show rec2) `shouldBe` "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<record name=\"MkPersonRecord\"><elt key=\"name\">\"Jeremy Singer\"</elt>\n<elt key=\"address\"><record name=\"MkAddress\"><elt key=\"line1\">\"School of Computing Science\"</elt>\n<elt key=\"number\">17</elt>\n<elt key=\"street\">\"Lilybank Gdns\"</elt>\n<elt key=\"town\">\"Glasgow\"</elt>\n<elt key=\"postcode\">\"G12 8QQ\"</elt></record></elt>\n<elt key=\"id\">42</elt>\n<elt key=\"labels\"><list><list-elt><adt>Blue</adt></list-elt>\n<list-elt><adt>Yellow</adt></list-elt></list></elt></record>"
 
 main :: IO ()
 main = hspec spec
