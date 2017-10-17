@@ -1,6 +1,6 @@
 module ShowParser
-    ( someFunc
+    ( parseShow
     ) where
 
-someFunc :: IO ()
-someFunc = putStrLn "someFunc 2"
+parseShow :: String -> String
+parseShow s = s
